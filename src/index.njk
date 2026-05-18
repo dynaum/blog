@@ -1,0 +1,28 @@
+---
+layout: base.njk
+---
+<section class="home">
+  <p class="eyebrow eyebrow--accent">// dynaum.blog · notes on building with AI</p>
+  <h1 class="home__title">Building things with AI,<br><span class="home__title-accent">written down.</span></h1>
+  <p class="home__lede">Field notes from shipping software and games where the model is a real collaborator — not a demo reel. The specs, the decisions, and what actually held up.</p>
+
+  <div class="rule-row">
+    <span class="rule-row__bullet">●</span>
+    <span class="rule-row__label">posts</span>
+    <span class="rule-row__line"></span>
+    <span class="rule-row__meta">{{ collections.posts | length }} total</span>
+  </div>
+
+  <ul class="post-list">
+  {% for post in collections.posts %}
+    <li class="post-list__row glow-card">
+      <time class="post-list__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      <div class="post-list__body">
+        <h2 class="post-list__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        {% if post.data.subtitle %}<p class="post-list__lede">{{ post.data.subtitle }}</p>{% endif %}
+      </div>
+      <span class="post-list__arrow" aria-hidden="true">→</span>
+    </li>
+  {% endfor %}
+  </ul>
+</section>

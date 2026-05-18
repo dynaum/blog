@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <meta name="theme-color" content="#0c0e10">
+
+  <meta property="og:title" content="{{ title or site.title }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:type" content="{{ 'article' if tags and 'posts' in tags else 'website' }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/" aria-label="dynaum blog — home">
+        <span class="brand__mark" aria-hidden="true">ER</span>
+        <span class="brand__prompt">elber<span class="dim">@</span>dynaum<span class="dim">:~/blog$</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/"><span class="dim">cd </span>posts</a>
+        <a href="https://dynaum.com"><span class="dim">cd </span>~</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      {{ content | safe }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© {% year %} {{ site.author }} <span class="dim">·</span> written with AI, kept honest by hand</p>
+      <p><a href="https://dynaum.com">dynaum.com</a> <span class="dim">·</span> <a href="https://github.com/dynaum">github</a></p>
+    </div>
+  </footer>
+</body>
+</html>
