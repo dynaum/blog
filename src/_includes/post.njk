@@ -12,6 +12,12 @@ layout: base.njk
   <h1 class="post__title">{{ title }}</h1>
   {% if subtitle %}<p class="post__subtitle">{{ subtitle }}</p>{% endif %}
 
+  {% if cover %}
+  <figure class="post__cover">
+    <img src="{{ cover }}" alt="{{ coverAlt or title }}" width="1344" height="768" loading="eager" decoding="async">
+  </figure>
+  {% endif %}
+
   <div class="prose">
     {{ content | safe }}
   </div>

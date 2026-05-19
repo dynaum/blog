@@ -241,6 +241,18 @@ main { flex: 1; padding: clamp(40px, 7vw, 72px) 0 64px; }
 }
 .post__back a { color: var(--ink2); border-bottom: none; }
 .post__back a:hover { color: var(--accent); }
+.post__cover {
+  margin: 32px 0 0;
+}
+.post__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1344 / 768;
+  object-fit: cover;
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+}
 
 /* ── Prose ─────────────────────────────────────────────────────────────── */
 .prose { margin-top: 36px; }
