@@ -398,3 +398,4 @@ main { flex: 1; padding: clamp(40px, 7vw, 72px) 0 64px; }
 .site-footer p { margin: 0; }
 .site-footer a { color: var(--ink2); border: none; }
 .site-footer a:hover { color: var(--accent); }
+.site-footer__note { margin-top: 14px; }
