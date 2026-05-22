@@ -126,6 +126,15 @@ a:hover { border-bottom-color: var(--accent); }
 }
 .site-nav a:hover { background: var(--bg2); color: var(--ink); }
 
+.lang-switch {
+  display: flex; align-items: center;
+  margin-left: 6px;
+  font-family: var(--mono); font-size: 12px;
+}
+.lang-switch a { padding: 6px 4px; }
+.lang-switch a:hover { background: none; color: var(--accent); }
+.lang-switch__on { padding: 6px 4px; color: var(--accent); }
+
 main { flex: 1; padding: clamp(40px, 7vw, 72px) 0 64px; }
 
 /* ── Eyebrow / rule-row ────────────────────────────────────────────────── */

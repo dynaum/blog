@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-lang: en
+lang: pt-br
 translationKey: index
 ---
 {%- set lang = lang or "en" -%}
@@ -14,11 +14,11 @@ translationKey: index
     <span class="rule-row__bullet">●</span>
     <span class="rule-row__label">posts</span>
     <span class="rule-row__line"></span>
-    <span class="rule-row__meta">{{ collections.posts | length }} total</span>
+    <span class="rule-row__meta">{{ collections.postsPtBr | length }} total</span>
   </div>
 
   <ul class="post-list">
-  {% for post in collections.posts %}
+  {% for post in collections.postsPtBr %}
     <li class="post-list__row glow-card">
       <time class="post-list__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate(s.htmlLocale) }}</time>
       <div class="post-list__body">

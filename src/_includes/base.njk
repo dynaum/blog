@@ -1,5 +1,10 @@
+{%- set lang = lang or "en" -%}
+{%- set s = strings[lang] -%}
+{%- set transKey = translationKey or page.fileSlug -%}
+{%- set langVersions = collections.localized | translations(transKey) -%}
+{%- set homeUrl = "/" if lang == "en" else "/" + lang + "/" -%}
 <!doctype html>
-<html lang="en">
+<html lang="{{ s.htmlLocale }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,12 +28,20 @@
   <meta property="og:description" content="{{ description or site.description }}">
   <meta property="og:type" content="{{ 'article' if tags and 'posts' in tags else 'website' }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="{{ s.ogLocale }}">
   {% if cover %}<meta property="og:image" content="{{ site.url }}{{ cover }}">{% endif %}
   <meta name="twitter:card" content="{{ 'summary_large_image' if cover else 'summary' }}">
   {% if cover %}<meta name="twitter:image" content="{{ site.url }}{{ cover }}">{% endif %}
 
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {%- if langVersions | length > 1 %}
+  {%- for v in langVersions %}
+  <link rel="alternate" hreflang="{{ strings[v.data.lang].htmlLocale }}" href="{{ site.url }}{{ v.url }}">
+  {%- if v.data.lang == "en" %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ v.url }}">
+  {%- endif %}
+  {%- endfor %}
+  {%- endif %}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,13 +55,22 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="/" aria-label="dynaum blog — home">
+      <a class="brand" href="{{ homeUrl }}" aria-label="dynaum blog — home">
         <span class="brand__mark" aria-hidden="true">ER</span>
         <span class="brand__prompt">elber<span class="dim">@</span>dynaum<span class="dim">:~/blog$</span></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/"><span class="dim">cd </span>posts</a>
+        <a href="{{ homeUrl }}"><span class="dim">cd </span>posts</a>
         <a href="https://dynaum.com"><span class="dim">cd </span>~</a>
+        {%- if langVersions | length > 1 %}
+        <span class="lang-switch" aria-label="Language">
+        {%- for v in langVersions %}
+          {%- if not loop.first %}<span class="dim"> · </span>{% endif -%}
+          {%- if v.data.lang == lang %}<span class="lang-switch__on">{{ strings[v.data.lang].langLabel }}</span>
+          {%- else %}<a href="{{ v.url }}">{{ strings[v.data.lang].langLabel }}</a>{%- endif -%}
+        {%- endfor %}
+        </span>
+        {%- endif %}
       </nav>
     </div>
   </header>

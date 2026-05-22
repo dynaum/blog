@@ -1,12 +1,15 @@
 ---
 layout: base.njk
 ---
+{%- set lang = lang or "en" -%}
+{%- set s = strings[lang] -%}
+{%- set homeUrl = "/" if lang == "en" else "/" + lang + "/" -%}
 <article class="post">
   <div class="rule-row">
     <span class="rule-row__bullet">●</span>
     <span class="rule-row__label">post</span>
     <span class="rule-row__line"></span>
-    <time class="rule-row__meta" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+    <time class="rule-row__meta" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate(s.htmlLocale) }}</time>
   </div>
 
   <h1 class="post__title">{{ title }}</h1>
@@ -22,5 +25,5 @@ layout: base.njk
     {{ content | safe }}
   </div>
 
-  <p class="post__back"><a href="/"><span class="dim">cd </span>../ <span class="dim">— all posts</span></a></p>
+  <p class="post__back"><a href="{{ homeUrl }}"><span class="dim">cd </span>../ <span class="dim">— all posts</span></a></p>
 </article>
