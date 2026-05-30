@@ -23,7 +23,7 @@ If you measure an AI-assisted team by velocity, you measure the one thing AI inf
 
 ## Trust is the right one
 
-[Frictionless](/posts/2026-05-20-frictionless-the-book-behind-the-loop/) by Nicole Forsgren and Abi Noda named the metric that survives the AI era: Trust. The question is simple. Do you trust the output enough to ship it without redoing the work?
+[Frictionless](/posts/2026-05-20-frictionless-the-book-behind-the-loop/) by Nicole Forsgren and Abi Noda named the metric that survives the AI era: Trust, the dimension it adds to the [SPACE framework](https://queue.acm.org/detail.cfm?id=3454124). The question is simple. Do you trust the output enough to ship it without redoing the work?
 
 Trust is the number that does not inflate for free. An agent writes ten PRs. If you trust two of them enough to ship and rewrite the other eight, your velocity was theater and your real output was two. Trust is what is left after you subtract the rework.
 

@@ -23,7 +23,7 @@ Se você mede um time assistido por IA pela velocidade, você mede a única cois
 
 ## Confiança é o número certo
 
-[Frictionless](/pt-br/posts/2026-05-20-frictionless-the-book-behind-the-loop/) de Nicole Forsgren e Abi Noda nomeou a métrica que sobrevive à era da IA: Confiança. A pergunta é simples. Você confia na saída o suficiente para colocá-la em produção sem refazer o trabalho?
+[Frictionless](/pt-br/posts/2026-05-20-frictionless-the-book-behind-the-loop/) de Nicole Forsgren e Abi Noda nomeou a métrica que sobrevive à era da IA: Confiança, a dimensão que ele adiciona ao [framework SPACE](https://queue.acm.org/detail.cfm?id=3454124). A pergunta é simples. Você confia na saída o suficiente para colocá-la em produção sem refazer o trabalho?
 
 Confiança é o número que não infla de graça. Um agente escreve dez PRs. Se você confia em duas o bastante para subir e reescreve as outras oito, sua velocidade foi teatro e sua saída real foi duas. Confiança é o que sobra depois que você subtrai o retrabalho.
 
