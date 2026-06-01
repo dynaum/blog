@@ -29,7 +29,12 @@ playbook also lives in the Obsidian vault at
 6. **Build + verify** (see Verify).
 7. **Publish on go-ahead:** commit EN + PT-BR + cover, push `main`, confirm deploy.
 8. **Vault catalog** (see Vault).
-9. **LinkedIn:** 80-130 words, ends with the post URL, no hashtags. Posted by hand.
+9. **LinkedIn:** 80-130 words, ends with the post URL, no hashtags. Posted by
+   hand. **Tease, do not summarize:** open the gap and make the reader click.
+   Name that there is an answer (e.g. "two ways, most people pick the costly
+   one") without giving it. Do not restate the post's argument, lists, or
+   payoff. If a reader gets the point without clicking, the teaser failed.
+   Offer a PT-BR version too.
 
 ## Frontmatter
 
