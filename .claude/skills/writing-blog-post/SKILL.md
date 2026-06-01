@@ -34,8 +34,8 @@ playbook also lives in the Obsidian vault at
    Name that there is an answer (e.g. "two ways, most people pick the costly
    one") without giving it. Do not restate the post's argument, lists, or
    payoff. If a reader gets the point without clicking, the teaser failed.
-   Offer a PT-BR version too. **Both language versions link to the English post
-   URL** (`/posts/SLUG/`), never the `/pt-br/` URL.
+   English only, one teaser, linking the English post URL (`/posts/SLUG/`). Do
+   not write a PT-BR LinkedIn text; only the article itself is translated.
 
 ## Frontmatter
 
