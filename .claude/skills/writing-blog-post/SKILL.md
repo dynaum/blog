@@ -21,7 +21,9 @@ playbook also lives in the Obsidian vault at
    Non-goals is the load-bearing section. Commit it.
 2. **Draft.** `src/posts/YYYY-MM-DD-slug.md`, dated one day after the latest post
    in `src/posts/`. Recommendation ~550-650 words; essay ~800-1000. Vary the hook.
-3. **Review.** Present the draft. Wait for approval.
+3. **Review.** Present the full draft text inline in the chat (Elber reviews on
+   the phone app, so paste the whole post, do not just link the file). Wait for
+   approval.
 4. **Cover.** Only after text is approved (see Cover).
 5. **PT-BR twin.** `src/pt-br/posts/<same-filename>.md` (see Translation).
 6. **Build + verify** (see Verify).
