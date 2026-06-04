@@ -1,14 +1,24 @@
 ---
 layout: base.njk
 lang: en
-translationKey: index
+pagination:
+  data: collections.posts
+  size: 7
+  alias: pagePosts
+  addAllPagesToCollections: true
+eleventyComputed:
+  translationKey: "index{% if pagination.pageNumber > 0 %}-{{ pagination.pageNumber + 1 }}{% endif %}"
+permalink: "{% if pagination.pageNumber == 0 %}/{% else %}/page-{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 {%- set lang = lang or "en" -%}
 {%- set s = strings[lang] -%}
+{%- set isFirst = pagination.pageNumber == 0 -%}
 <section class="home">
+  {%- if isFirst %}
   <p class="eyebrow eyebrow--accent">// dynaum.blog · notes on building with AI</p>
   <h1 class="home__title">Building things with AI,<br><span class="home__title-accent">written down.</span></h1>
-  <p class="home__lede">Field notes from shipping software and games where the model is a real collaborator — not a demo reel. The specs, the decisions, and what actually held up.</p>
+  <p class="home__lede">Field notes from shipping software and games where the model is a real collaborator, not a demo reel. The specs, the decisions, and what actually held up.</p>
+  {%- endif %}
 
   <div class="rule-row">
     <span class="rule-row__bullet">●</span>
@@ -17,16 +27,49 @@ translationKey: index
     <span class="rule-row__meta">{{ collections.posts | length }} total</span>
   </div>
 
+  {%- if isFirst %}
+  {%- set hero = pagePosts[0] %}
+  <a class="hero-card glow-card" href="{{ hero.url }}">
+    {%- if hero.data.cover %}
+    <span class="hero-card__media">
+      <img src="{{ hero.data.cover }}" alt="{{ hero.data.coverAlt }}" width="1344" height="768" loading="eager" decoding="async">
+    </span>
+    {%- endif %}
+    <span class="hero-card__body">
+      <time class="post-list__date" datetime="{{ hero.date | htmlDateString }}">{{ hero.date | readableDate(s.htmlLocale) }}</time>
+      <span class="hero-card__title">{{ hero.data.title }}</span>
+      {%- if hero.data.subtitle %}<span class="hero-card__lede">{{ hero.data.subtitle }}</span>{% endif %}
+      <span class="hero-card__cta">read →</span>
+    </span>
+  </a>
+  {%- endif %}
+
   <ul class="post-list">
-  {% for post in collections.posts %}
-    <li class="post-list__row glow-card">
-      <time class="post-list__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate(s.htmlLocale) }}</time>
+  {%- for post in pagePosts %}
+    {%- if not (isFirst and loop.first) %}
+    <li class="post-list__row glow-card{% if post.data.cover %} post-list__row--thumb{% endif %}">
+      {%- if post.data.cover %}
+      <a class="post-list__thumb" href="{{ post.url }}" tabindex="-1" aria-hidden="true">
+        <img src="{{ post.data.cover }}" alt="" width="1344" height="768" loading="lazy" decoding="async">
+      </a>
+      {%- endif %}
       <div class="post-list__body">
+        <time class="post-list__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate(s.htmlLocale) }}</time>
         <h2 class="post-list__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
         {% if post.data.subtitle %}<p class="post-list__lede">{{ post.data.subtitle }}</p>{% endif %}
       </div>
-      <span class="post-list__arrow" aria-hidden="true">→</span>
     </li>
-  {% endfor %}
+    {%- endif %}
+  {%- endfor %}
   </ul>
+
+  {%- if pagination.pages | length > 1 %}
+  <nav class="pager" aria-label="Pagination">
+    {%- if pagination.href.previous %}<a class="pager__link" href="{{ pagination.href.previous }}">← newer</a>
+    {%- else %}<span class="pager__link pager__link--off">← newer</span>{% endif %}
+    <span class="pager__status">page {{ pagination.pageNumber + 1 }} / {{ pagination.pages | length }}</span>
+    {%- if pagination.href.next %}<a class="pager__link" href="{{ pagination.href.next }}">older →</a>
+    {%- else %}<span class="pager__link pager__link--off">older →</span>{% endif %}
+  </nav>
+  {%- endif %}
 </section>
