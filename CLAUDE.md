@@ -56,7 +56,7 @@ python3 tools/gen-cover.py YYYY-MM-DD-slug "<per-post concept sentence>"
 
 ## LinkedIn
 
-Each post gets a short companion text, posted by hand. Saved to iCloud alongside the draft.
+Each post gets a short companion text, posted by hand. Shown directly in the conversation, never saved to iCloud.
 
 - 80 to 130 words.
 - Ends with the post URL (`https://blog.dynaum.com/posts/SLUG/`, PT-BR under `/pt-br/posts/SLUG/`).
