@@ -29,7 +29,7 @@ cover: /assets/img/SLUG.png   # optional hero image
 coverAlt: "..."               # describe the image
 ```
 
-Date each post a day after the previous one. Eleventy sorts the index newest-first.
+Date each post with the current date. Eleventy sorts the index newest-first.
 
 ## Writing style
 

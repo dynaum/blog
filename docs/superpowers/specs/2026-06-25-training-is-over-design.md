@@ -85,4 +85,4 @@ altering it. The object is done; the room moves, it does not.
   context). Training-data question named and set aside.
 - Length: foundations essay, 800-1000 words.
 - Citations: light or none.
-- Date: 2026-06-17 (one day after the latest post).
+- Date: 2026-06-25 (current date; Elber's standing preference is to date posts with the current date, not one day after the previous post).
