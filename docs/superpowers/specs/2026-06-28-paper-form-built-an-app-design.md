@@ -1,4 +1,4 @@
-# Design spec: "He Gave Me a Paper Form. I Built an App."
+# Design spec: "She Gave Me a Paper Form. I Built an App."
 
 ## One-sentence pitch
 
@@ -39,7 +39,7 @@ had, done better.
 
 ## Proposed structure
 
-1. Hook: the doctor's office. Asked to track BP for a few weeks, he reaches for a
+1. Hook: the doctor's office. Asked to track BP for a few weeks, she reaches for a
    paper form. I nodded, then thought: why paper?
 2. The calculation flipped. Paper was once rational; an app meant weeks. Not now.
 3. What I built. bplog: two readings a day, on-device, trends, a doctor report.
@@ -77,7 +77,7 @@ texture, soft bloom. No text in the image.
 
 ## Open questions
 
-- Title chosen: "He Gave Me a Paper Form. I Built an App." Alternatives
+- Title chosen: "She Gave Me a Paper Form. I Built an App." Alternatives
   considered: "Paper, or an Afternoon," "Why I Didn't Use the Paper."
 
 ## Decisions
