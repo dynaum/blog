@@ -63,6 +63,16 @@ Each post gets a short companion text, posted by hand. Shown directly in the con
 - No hashtags. Same style rules as the post.
 - Opens with a hook that is not the game story.
 
+## X (Twitter)
+
+Each post also gets an X companion, posted by hand. Shown directly in the conversation, never saved to iCloud.
+
+- Shorter than the LinkedIn text. Two or three lines.
+- Ends with the English post URL (`https://blog.dynaum.com/posts/SLUG/`).
+- No hashtags. Same style rules as the post.
+- Lead with a familiar pain, not the post's own opening hook. Tease, do not summarize.
+- English only.
+
 ## Translation
 
 Bilingual: English at the root, Brazilian Portuguese under `/pt-br/`. English is canonical.

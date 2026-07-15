@@ -38,6 +38,11 @@ playbook also lives in the Obsidian vault at
    payoff. If a reader gets the point without clicking, the teaser failed.
    English only, one teaser, linking the English post URL (`/posts/SLUG/`). Do
    not write a PT-BR LinkedIn text; only the article itself is translated.
+10. **X (Twitter):** shorter than the LinkedIn text. Two or three lines, ends
+    with the post URL, no hashtags. Same rules: lead with a familiar pain, not
+    the post's own opening hook; tease, do not summarize. Shown in the
+    conversation, never saved to iCloud. English only, links the English post
+    URL (`/posts/SLUG/`).
 
 ## Frontmatter
 
@@ -96,9 +101,34 @@ End commit messages with the Co-Authored-By trailer.
 
 ## Vault
 
-After publish, update the Obsidian catalog (outside this repo, not in the push):
-- `~/Documents/obsidian/web/blog/posts.md` — add the post entry, bump the count.
-- `~/Documents/obsidian/web/blog/README.md` — add to the series list, bump count.
+After publish, update the Obsidian catalog in the `web` vault (outside this repo,
+not in the push). The vault filesystem is sandboxed, so go through the `obsidian`
+CLI: read the file, edit the text, write it back with `create ... overwrite`.
+Hit **every** touch point below, they drift out of sync when one is skipped (the
+detail sections once ran 10 posts ahead of the summary table).
+
+`blog/posts.md`:
+- Add a row to the `## The series so far` table: next number, date, title,
+  one-line topic.
+- Add a `## N. Title` detail section right before `## Themes that recur...`,
+  matching the existing sections: **Date**, **Slug** + live link, **Cover**
+  description, **Topic.** paragraph, **Cross-references.** paragraph.
+- Bump the header line `All N posts are translated.`
+
+`blog/README.md`:
+- Bump both counts: `... N posts as of YYYY-MM-DD` and
+  `All N posts have a Brazilian Portuguese twin`.
+
+CLI mechanics (there is no in-place edit command, only read + overwrite):
+
+```bash
+obsidian vault="web" read path="blog/posts.md"            # current content
+# transform locally, then write the whole file back (escape newlines to \n):
+obsidian vault="web" create path="blog/posts.md" content="..." overwrite silent
+```
+
+`obsidian help` lists commands. If the CLI is missing, it is bundled in the app:
+Settings → General → toggle "Command line interface".
 
 ## Common mistakes
 
