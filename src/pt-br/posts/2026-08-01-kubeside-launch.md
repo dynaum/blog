@@ -4,7 +4,7 @@ subtitle: "Um cliente Kubernetes feito para o desenvolvedor que entrega a aplica
 date: 2026-08-01
 description: "Lançamento do kubeside, um cliente Kubernetes open source para desenvolvedores de aplicação. Quatro perguntas em qa, stg e prod, nada gravado em disco e uma longa lista de recursos recusados de propósito. Por que nomear a única pessoa que a ferramenta atende transforma a lista de recursos em um problema de subtração."
 cover: /assets/img/2026-08-01-kubeside-launch.png
-coverAlt: "Um campo denso de contêineres geométricos escuros sumindo na escuridão, com um corredor âmbar estreito cortando reto entre eles, iluminando apenas alguns contêineres ao longo do caminho enquanto o resto permanece apagado, luz de contorno azul-esverdeada nas bordas dos blocos, textura de pinceladas e brilho suave."
+coverAlt: "A fachada escura de um prédio alto à noite, vista de baixo, com uma coluna estreita de janelas acesas em âmbar quente subindo pelo centro enquanto todas as outras janelas permanecem apagadas, luz de contorno azul-esverdeada nas bordas de concreto, textura de pinceladas e brilho suave."
 ---
 
 Três terminais abertos. Uma aba por réplica. E um palpite sobre qual versão a produção está rodando de verdade.

@@ -4,7 +4,7 @@ subtitle: "A Kubernetes client scoped to the developer who ships the app, not th
 date: 2026-08-01
 description: "Announcing kubeside, an open-source Kubernetes client for application developers. Four questions across qa, stg, and prod, nothing written to disk, and a long list of features deliberately refused. Why naming the one person a tool serves turns the feature list into a subtraction problem."
 cover: /assets/img/2026-08-01-kubeside-launch.png
-coverAlt: "A dense field of dim geometric containers receding into darkness with one narrow amber corridor cut straight through them, lighting only a few containers along its path while the rest stay unlit, muted teal rim light on the block edges, brushstroke texture and soft bloom."
+coverAlt: "The dark facade of a tall building at night seen from below, with one narrow column of windows lit warm amber running up its center while every other window stays unlit, muted teal rim light along the concrete edges, brushstroke texture and soft bloom."
 ---
 
 Three terminals open. A tab per replica. A guess about which version production is actually running.
